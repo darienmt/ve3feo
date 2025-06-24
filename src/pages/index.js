@@ -34,9 +34,9 @@ const IndexPage = () => {
       <p style={paragraphStyles}>Thank you very much for visiting my QRZ page. This is work in progress...</p>
       <h2>Radio clubs</h2>
       <div className="clubsContainer">
-        <a href="https://www.barc.ca/" alt="Burlington Amateur Radio Club"><img src={barcLogo} alt="BARC Logo"/></a>
-        <a href="https://www.rac.ca/" alt="Radio Amateurs of Canada"><img src={racLogo} alt="RAC Logo"/></a>
-        <a href="https://www.skccgroup.com/" alt="Straight Key Century Club"><img src={skccLogo} alt="SKCC Logo"/></a>
+        <a href="https://www.barc.ca/" alt="Burlington Amateur Radio Club" target="_blank"><img src={barcLogo} alt="BARC Logo"/></a>
+        <a href="https://www.rac.ca/" alt="Radio Amateurs of Canada" target="_blank"><img src={racLogo} alt="RAC Logo"/></a>
+        <a href="https://www.skccgroup.com/" alt="Straight Key Century Club" target="_blank"><img src={skccLogo} alt="SKCC Logo"/></a>
       </div>
       <h2>Last 15 contacts</h2>
       
