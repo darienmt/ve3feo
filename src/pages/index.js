@@ -12,11 +12,20 @@ const IndexPage = () => {
         <div className="flex flex-row items-center w-64 h-44 mb-2 gap-8">
           <span className="text-blue-700 text-[4rem] lg:text-[5rem] font-black tracking-widest drop-shadow-lg bg-white/80 px-4 py-1 rounded uppercase shadow-md" style={{ fontFamily: 'Orbitron, sans-serif' }}>
             VE3FEO
-          </span>
-          <img src={ve3feoMorse} alt="VE3FEO Morse Code Logo" className="w-64 h-auto" />
-        </div>
+          </span></div>
       </header>
-      <p className="mb-6 text-lg text-gray-600 text-center">Thank you very much for visiting my QRZ page. This is work in progress...</p>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4 text-blue-700 border-b border-blue-100 pb-1">
+          About VE3FEO
+        </h2>
+        <div className="flex flex-col sm:flex-row items-center gap-6 bg-white/80 rounded-xl shadow p-6">
+          <div>
+            <p className="text-gray-700 text-base mb-2">Hi! I’m <span className="font-semibold text-blue-700">Darien</span>, an amateur radio operator based in Ontario, Canada. I enjoy nets, SSB(sometimes), digital modes, and Morse code (CW). I’m a member of several radio clubs and love making contacts around the world.</p>
+            <p className="text-gray-600 text-sm">This site is a work in progress—check back for updates, logs, and more ham radio content!</p>
+          </div>
+          <img src={ve3feoMorse} alt="VE3FEO Morse Code" className="w-28 h-28 object-contain rounded-full shadow" />
+        </div>
+      </section>
       <h2 className="text-2xl font-semibold mb-4 text-blue-700 border-b border-blue-100 pb-1">Radio clubs</h2>
       <div className="flex flex-nowrap flex-wrap justify-center items-center mb-8 gap-x-48 gap-y-16">
         <a href="https://www.barc.ca/" rel="noopener noreferrer" target="_blank" title="Burlington Amateur Radio Club" className="px-12 py-4">
