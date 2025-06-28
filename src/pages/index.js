@@ -50,8 +50,8 @@ const IndexPage = () => {
           src="https://logbook.qrz.com/lbstat/VE3FEO/"
         ></iframe>
       </div>
-      <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4">
-        &copy; {new Date().getFullYear()} VE3FEO &middot; Powered by Gatsby & Tailwind CSS
+      <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+        <span>&copy; {new Date().getFullYear()} VE3FEO &middot; Last updated: {typeof process !== 'undefined' && process.env.BUILD_DATE ? new Date(process.env.BUILD_DATE).toLocaleString() : new Date().toLocaleString()}</span>
       </footer>
     </main>
   )
