@@ -7,6 +7,22 @@
   Gatsby Minimal Starter
 </h1>
 
+# VE3FEO Personal Ham Radio Site
+
+This is the personal website of Darien Martinez Torres (VE3FEO), an amateur radio operator based in Ontario, Canada.
+
+## About
+- **VE3FEO** is a modern, responsive Gatsby site showcasing Darien's ham radio activities, club memberships, and recent contacts.
+- The site features an About section, radio club links, and a live logbook embed from QRZ.
+- Built with [Gatsby](https://www.gatsbyjs.com/), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/) for a clean, fast, and mobile-friendly experience.
+
+## Features
+- **About Section:** Introduction and background of Darien (VE3FEO).
+- **Radio Clubs:** Quick links to BARC, RAC, and SKCC with club logos.
+- **Live Logbook:** Embedded QRZ logbook showing the last 15 contacts.
+- **Modern Design:** Uses Orbitron font, card layouts, and responsive Tailwind CSS styling.
+- **Footer:** Displays the last updated date (build time) and site credits.
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -47,3 +63,12 @@
 Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+## Development
+- Clone the repo and run `npm install` to install dependencies.
+- Use `npm run develop` to start the local development server.
+- Use `npm run build` to build the site for production.
+- Deploys use the `deploy` script, which sets a build date for the footer.
+
+## License
+This project is for personal use and learning. See LICENSE if present.
