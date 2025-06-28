@@ -59,4 +59,9 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => (
+  <>
+    <title>Home Page</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon-antenna.svg" />
+  </>
+)
