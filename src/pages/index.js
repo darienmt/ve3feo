@@ -43,11 +43,13 @@ const IndexPage = () => {
         </a>
       </div>
       <h2 className="text-2xl font-semibold mb-4 text-blue-700 border-b border-blue-100 pb-1">Last 15 contacts</h2>
-      <div className="overflow-x-auto rounded-lg shadow bg-white">
+      <div className="rounded-lg shadow bg-white">
         <iframe
           title="QRZ Log"
-          className="w-full min-w-[320px] h-[500px] border-0 rounded-lg"
+          className="w-full min-w-[420px] h-[500px] border-0 rounded-lg"
           src="https://logbook.qrz.com/lbstat/VE3FEO/"
+          scrolling="no"
+          style={{ overflow: 'hidden' }}
         ></iframe>
       </div>
       <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
