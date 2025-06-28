@@ -10,10 +10,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "node scripts/write-build-date.js && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "BUILD_DATE=\"$(date -u '+%B %d, %Y, %H:%M:%S UTC')\"gatsby build && gh-pages -d public -b main"
+    "deploy": "node scripts/write-build-date.js && gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
     "@fontsource/orbitron": "^5.2.6",

@@ -4,6 +4,7 @@ import barcLogo from '../images/BARC-100.png'
 import racLogo from '../images/rac-100.png'
 import skccLogo from '../images/SKCCLogo-100.png'
 import "@fontsource/orbitron/latin.css"
+import buildDateData from '../build-date.json';
 
 const IndexPage = () => {
   return (
@@ -46,12 +47,11 @@ const IndexPage = () => {
         <iframe
           title="QRZ Log"
           className="w-full min-w-[320px] h-[500px] border-0 rounded-lg"
-          scrolling="yes"
           src="https://logbook.qrz.com/lbstat/VE3FEO/"
         ></iframe>
       </div>
       <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-        <span>&copy; {new Date().getFullYear()} VE3FEO &middot; Last updated: {typeof process !== 'undefined' && process.env.BUILD_DATE ? new Date(process.env.BUILD_DATE).toLocaleString() : new Date().toLocaleString()}</span>
+        <span>&copy; {new Date().getFullYear()} VE3FEO &middot; Last updated: {buildDateData.buildDate ? new Date(buildDateData.buildDate).toLocaleString() : new Date().toLocaleString()}</span>
       </footer>
     </main>
   )
@@ -61,7 +61,7 @@ export default IndexPage
 
 export const Head = () => (
   <>
-    <title>Home Page</title>
+    <title>VE3FEO - Amateur Radio Operator</title>
     <link rel="icon" type="image/svg+xml" href="/favicon-antenna.svg" />
   </>
 )
