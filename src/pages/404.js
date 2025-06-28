@@ -1,45 +1,23 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import brokenAntenna from "../images/broken-antenna.png"
 
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+    <main className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-gray-50 to-white text-gray-800 p-8 font-sans">
+      <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-10 max-w-lg w-full">
+        <img src={brokenAntenna} alt="Broken antenna illustration" className="w-40 h-40 object-contain mb-4" />
+        <h1 className="text-3xl font-bold mb-4 text-blue-700">Page not found</h1>
+        <p className="mb-6 text-lg text-gray-600 text-center">
+          Sorry, we couldn’t find what you were looking for.
+        </p>
+        <Link
+          to="/"
+          className="inline-block bg-blue-700 text-white px-6 py-2 rounded shadow hover:bg-blue-800 transition-colors font-semibold"
+        >
+          Go home
+        </Link>
+      </div>
     </main>
   )
 }
