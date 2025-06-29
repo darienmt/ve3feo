@@ -29,14 +29,13 @@ const IndexPage = () => (
     </section>
     {/* Pure HTML/CSS Tabs - All tab controls and panels must be siblings */}
     <div className="mb-8">
-      <div className="relative flex border-b border-blue-200 mb-4" role="tablist">
-        <input type="radio" name="tabset" id="tab-contacts" defaultChecked className="hidden" />
-        <label htmlFor="tab-contacts" className="cursor-pointer transition focus:outline-none border-b-2 bg-blue-50 text-gray-500 hover:text-blue-700 hover:bg-white border-transparent focus-visible:ring-2 focus-visible:ring-blue-400 px-6 py-3 rounded-t-2xl font-bold text-lg tab-label">Last 15 contacts</label>
-        <input type="radio" name="tabset" id="tab-clubs" className="hidden" />
-        <label htmlFor="tab-clubs" className="cursor-pointer transition focus:outline-none border-b-2 bg-blue-50 text-gray-500 hover:text-blue-700 hover:bg-white border-transparent focus-visible:ring-2 focus-visible:ring-blue-400 px-6 py-3 rounded-t-2xl font-bold text-lg tab-label">Radio clubs</label>
-        <input type="radio" name="tabset" id="tab-location" className="hidden" />
-        <label htmlFor="tab-location" className="cursor-pointer transition focus:outline-none border-b-2 bg-blue-50 text-gray-500 hover:text-blue-700 hover:bg-white border-transparent focus-visible:ring-2 focus-visible:ring-blue-400 px-6 py-3 rounded-t-2xl font-bold text-lg tab-label">Location</label>
-        {/* Tab panels as siblings, in the same parent as the radios/labels */}
+      <div className="relative flex border-b border-blue-200 mb-4 bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 rounded-t-2xl shadow-sm overflow-x-auto py-2 px-2" role="tablist">
+        <input type="radio" name="tabset" id="tab-contacts" defaultChecked className="hidden peer" />
+        <label htmlFor="tab-contacts" role="tab" tabIndex={0} className="tab-label">Last 15 contacts</label>
+        <input type="radio" name="tabset" id="tab-clubs" className="hidden peer" />
+        <label htmlFor="tab-clubs" role="tab" tabIndex={0} className="tab-label">Radio clubs</label>
+        <input type="radio" name="tabset" id="tab-location" className="hidden peer" />
+        <label htmlFor="tab-location" role="tab" tabIndex={0} className="tab-label">Location</label>
         <div className="tab-panel" id="panel-contacts">
           <ContactsTab />
         </div>
@@ -65,6 +64,15 @@ const IndexPage = () => (
       .tab-panel {
         display: none;
       }
+      .tab-label {
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-weight: 600;
+        color: #2563eb;
+        background: #f8fafc;
+        border-bottom: 2px solid transparent;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      }
       /* Style the active tab label */
       #tab-contacts:checked + label,
       #tab-clubs:checked + label,
@@ -72,7 +80,7 @@ const IndexPage = () => (
         background: #fff;
         color: #2563eb;
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        border-bottom: 2px solid #2563eb;
+        border-bottom: none;
         z-index: 10;
       }
     `}</style>
