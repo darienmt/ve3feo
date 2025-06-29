@@ -2,12 +2,14 @@ import * as React from "react"
 import ve3feoMorse from '../images/ve3feo-morse-500.png'
 import ContactsTab from './ContactsTab'
 import ClubsTab from './ClubsTab'
+import LocationTab from './LocationTab'
 import "@fontsource/orbitron/latin.css"
 import buildDateData from '../build-date.json';
 
 const TABS = [
   { id: 'contacts', label: 'Last 15 contacts' },
   { id: 'clubs', label: 'Radio clubs' },
+  { id: 'location', label: 'Location' },
 ];
 
 const IndexPage = () => {
@@ -58,8 +60,13 @@ const IndexPage = () => {
           <span
             className="absolute bottom-0 left-0 h-1 bg-blue-600 transition-all duration-300 rounded-t"
             style={{
-              width: `calc(50%)`,
-              transform: activeTab === 'contacts' ? 'translateX(0%)' : 'translateX(100%)',
+              width: `calc(100% / 3)`,
+              transform:
+                activeTab === 'contacts'
+                  ? 'translateX(0%)'
+                  : activeTab === 'clubs'
+                  ? 'translateX(100%)'
+                  : 'translateX(200%)',
               zIndex: 5
             }}
             aria-hidden="true"
@@ -69,6 +76,7 @@ const IndexPage = () => {
         <div>
           {activeTab === 'contacts' && <ContactsTab />}
           {activeTab === 'clubs' && <ClubsTab />}
+          {activeTab === 'location' && <LocationTab />}
         </div>
       </div>
       <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
