@@ -12,6 +12,7 @@ const LocationTab = () => (
           className="w-full max-w-md h-64 border-2 border-blue-200 rounded-lg shadow"
           allowFullScreen=""
           loading="lazy"
+          sandbox="allow-scripts allow-same-origin"
         ></iframe>
       </div>
       <p className="text-gray-600 text-sm">Grid: FN03 (approximate, for privacy)</p>
