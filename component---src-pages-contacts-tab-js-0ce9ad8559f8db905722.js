@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkve3feo=self.webpackChunkve3feo||[]).push([[756],{6219:function(e,l,t){t.r(l);var a=t(7294);l.default=()=>a.createElement("div",{id:"tab-panel-contacts",role:"tabpanel"},a.createElement("div",{className:"rounded-lg shadow bg-white"},a.createElement("iframe",{title:"QRZ Log",className:"w-full min-w-[720px] h-[500px] border-0 rounded-lg",src:"https://logbook.qrz.com/lbstat/VE3FEO/",scrolling:"no",style:{overflow:"hidden"}})))}}]);
+//# sourceMappingURL=component---src-pages-contacts-tab-js-0ce9ad8559f8db905722.js.map
