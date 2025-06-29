@@ -1,8 +1,7 @@
 import * as React from "react"
 import ve3feoMorse from '../images/ve3feo-morse-500.png'
-import barcLogo from '../images/BARC-100.png'
-import racLogo from '../images/rac-100.png'
-import skccLogo from '../images/SKCCLogo-100.png'
+import ContactsTab from './ContactsTab'
+import ClubsTab from './ClubsTab'
 import "@fontsource/orbitron/latin.css"
 import buildDateData from '../build-date.json';
 
@@ -36,57 +35,40 @@ const IndexPage = () => {
       </section>
       {/* Tabs */}
       <div className="mb-8">
-        <div className="flex border-b border-blue-200 mb-4">
+        <div className="relative flex border-b border-blue-200 mb-4" role="tablist">
           {TABS.map(tab => (
             <button
               key={tab.id}
-              className={`px-6 py-2 text-base font-semibold focus:outline-none transition border-b-2 ${activeTab === tab.id ? 'border-blue-600 text-blue-700 bg-blue-50' : 'border-transparent text-gray-500 hover:text-blue-700 hover:bg-blue-50'}`}
+              style={{ fontSize: '1.25rem', fontWeight: 700, padding: '0.75rem 1.5rem', borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem' }}
+              className={`transition focus:outline-none border-b-2 
+                ${activeTab === tab.id
+                  ? 'bg-white text-blue-700 shadow-md border-blue-600 z-10'
+                  : 'bg-blue-50 text-gray-500 hover:text-blue-700 hover:bg-white border-transparent'} focus-visible:ring-2 focus-visible:ring-blue-400`}
               onClick={() => setActiveTab(tab.id)}
               type="button"
               aria-selected={activeTab === tab.id}
               aria-controls={`tab-panel-${tab.id}`}
               role="tab"
+              tabIndex={activeTab === tab.id ? 0 : -1}
             >
               {tab.label}
             </button>
           ))}
+          {/* Animated indicator */}
+          <span
+            className="absolute bottom-0 left-0 h-1 bg-blue-600 transition-all duration-300 rounded-t"
+            style={{
+              width: `calc(50%)`,
+              transform: activeTab === 'contacts' ? 'translateX(0%)' : 'translateX(100%)',
+              zIndex: 5
+            }}
+            aria-hidden="true"
+          />
         </div>
         {/* Tab panels */}
         <div>
-          {activeTab === 'contacts' && (
-            <div id="tab-panel-contacts" role="tabpanel">
-              <div className="rounded-lg shadow bg-white">
-                <iframe
-                  title="QRZ Log"
-                  className="w-full min-w-[420px] h-[500px] border-0 rounded-lg"
-                  src="https://logbook.qrz.com/lbstat/VE3FEO/"
-                  scrolling="no"
-                  style={{ overflow: 'hidden' }}
-                ></iframe>
-              </div>
-            </div>
-          )}
-          {activeTab === 'clubs' && (
-            <div id="tab-panel-clubs" role="tabpanel">
-              <br/>
-              <div className="flex justify-center items-center mb-8 py-12">
-                <div className="flex flex-row flex-wrap justify-center w-full gap-x-24 gap-y-24 p-16 bg-white/90 rounded-3xl shadow-inner max-w-2xl min-h-[150px]">
-                  <a href="https://www.barc.ca/" rel="noopener noreferrer" target="_blank" title="Burlington Amateur Radio Club" className="px-20 py-12">
-                    <img src={barcLogo} alt="Burlington Amateur Radio Club Logo" className="w-24 h-24 object-contain rounded-full shadow-sm hover:shadow-lg hover:bg-blue-50 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-                    <span className="block text-center text-xs text-gray-500 mt-2">BARC</span>
-                  </a>
-                  <a href="https://www.rac.ca/" rel="noopener noreferrer" target="_blank" title="Radio Amateurs of Canada" className="px-20 py-12">
-                    <img src={racLogo} alt="Radio Amateurs of Canada Logo" className="w-24 h-24 object-contain rounded-lg shadow-sm hover:shadow-lg hover:bg-blue-50 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-                    <span className="block text-center text-xs text-gray-500 mt-2">RAC</span>
-                  </a>
-                  <a href="https://www.skccgroup.com/" rel="noopener noreferrer" target="_blank" title="Straight Key Century Club" className="px-20 py-12">
-                    <img src={skccLogo} alt="Straight Key Century Club Logo" className="w-24 h-24 object-contain rounded-full shadow-sm hover:shadow-lg hover:bg-blue-50 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-                    <span className="block text-center text-xs text-gray-500 mt-2">SKCC</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          )}
+          {activeTab === 'contacts' && <ContactsTab />}
+          {activeTab === 'clubs' && <ClubsTab />}
         </div>
       </div>
       <footer className="mt-10 text-center text-gray-400 text-sm border-t border-gray-100 pt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
